@@ -20,7 +20,3 @@ version: 1
 ```pdf-annotations
 {"page":10,"items":[{"id":"mvjk0a9302","type":"text","x":216.37,"y":250.02,"w":83.25,"h":20.78,"text":"estimator","color":"#e03131","fontSize":14}]}
 ```
-
-
-# Notes
-posterior ?
