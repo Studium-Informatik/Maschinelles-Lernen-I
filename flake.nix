@@ -16,6 +16,10 @@
       devShells = nixpkgs.lib.genAttrs systems (system:
         let
           pkgs = import nixpkgs { inherit system; };
+          gpg = with pkgs; [
+            gnupg
+            unzip
+          ];
           python = pkgs.python313.withPackages (ps: [
             ps.ipykernel
             ps.jupyterlab
@@ -34,7 +38,7 @@
         in
         {
           default = pkgs.mkShell {
-            packages = [ python ];
+            packages = [ python ] ++ gpg;
             JUPYTER_PATH = "${kernel}/share/jupyter";
             PYTHONNOUSERSITE = "1";
           };
